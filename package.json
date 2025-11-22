@@ -14,6 +14,8 @@
     "@commitlint/config-conventional": "^20.0.0",
     "@cspell/cspell-types": "^9.3.2",
     "@nx/js": "22.1.1",
+    "@nx/node": "22.1.1",
+    "@nx/workspace": "22.1.1",
     "@prettier/plugin-xml": "^3.4.2",
     "@swc-node/register": "~1.11.1",
     "@swc/core": "~1.15.3",
