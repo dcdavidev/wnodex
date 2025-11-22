@@ -25,7 +25,12 @@
   "targetDefaults": {
     "@nx/js:tsc": {
       "cache": true,
-      "dependsOn": ["^build"],
+      "dependsOn": ["^build", "doc:g:toc"],
+      "inputs": ["production", "^production"]
+    },
+    "@nx/esbuild:esbuild": {
+      "cache": true,
+      "dependsOn": ["^build", "doc:g:toc"],
       "inputs": ["production", "^production"]
     }
   },

@@ -3,7 +3,17 @@
   "version": "0.0.0",
   "private": true,
   "license": "MIT",
-  "scripts": {},
+  "scripts": {
+    "build": "pnpm dlx nx run-many -t build",
+    "doc:g:toc": "pnpm dlx markdown-toc -i README.md",
+    "postdoc:g:toc": "nx run-many -t doc:g:toc",
+    "fmt": "pnpm exec prettier --ignore-unknown --write .",
+    "lint": "pnpm dlx eslint --no-warn-ignored --fix .",
+    "lint:fmt": "pnpm lint && pnpm fmt",
+    "playground": "nx serve playground",
+    "prepare": "lefthook install",
+    "release": "nx release --yes"
+  },
   "config": {
     "commitizen": {
       "path": "git-cz"
@@ -14,6 +24,7 @@
     "@commitlint/cli": "^20.1.0",
     "@commitlint/config-conventional": "^20.0.0",
     "@cspell/cspell-types": "^9.3.2",
+    "@nx/esbuild": "22.1.1",
     "@nx/js": "22.1.1",
     "@nx/node": "22.1.1",
     "@nx/workspace": "22.1.1",
@@ -28,6 +39,7 @@
     "cspell": "^9.3.2",
     "cspell-config-spellbookx": "^0.3.2",
     "cz-git": "^1.12.0",
+    "esbuild": "^0.19.2",
     "eslint": "^9.39.1",
     "eslint-plugin-spellbookx": "^0.3.3",
     "nx": "22.1.1",

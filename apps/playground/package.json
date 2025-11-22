@@ -1,0 +1,126 @@
+{
+  "name": "@dcdavidev/playground",
+  "version": "0.0.1",
+  "private": true,
+  "dependencies": {
+    "express": "^5.1.0",
+    "open": "^11.0.0",
+    "passport": "^0.7.0",
+    "wnodex": "workspace:*"
+  },
+  "devDependencies": {
+    "@types/express": "^5.0.5",
+    "@types/passport": "^1.0.17"
+  },
+  "nx": {
+    "tags": [
+      "demo",
+      "scope:playground",
+      "type:app"
+    ],
+    "targets": {
+      "build": {
+        "executor": "@nx/esbuild:esbuild",
+        "outputs": [
+          "{options.outputPath}"
+        ],
+        "dependsOn": [
+          "^build",
+          "doc:g:toc"
+        ],
+        "defaultConfiguration": "production",
+        "options": {
+          "platform": "node",
+          "outputPath": "apps/playground/dist",
+          "format": [
+            "cjs"
+          ],
+          "bundle": false,
+          "main": "apps/playground/src/main.ts",
+          "tsConfig": "apps/playground/tsconfig.app.json",
+          "assets": [
+            "apps/playground/src/assets"
+          ],
+          "esbuildOptions": {
+            "sourcemap": true,
+            "outExtension": {
+              ".js": ".js"
+            }
+          }
+        },
+        "configurations": {
+          "development": {},
+          "production": {
+            "esbuildOptions": {
+              "sourcemap": false,
+              "outExtension": {
+                ".js": ".js"
+              }
+            }
+          }
+        }
+      },
+      "prune-lockfile": {
+        "dependsOn": [
+          "build"
+        ],
+        "cache": true,
+        "executor": "@nx/js:prune-lockfile",
+        "outputs": [
+          "{workspaceRoot}/apps/playground/dist/package.json",
+          "{workspaceRoot}/apps/playground/dist/pnpm-lock.yaml"
+        ],
+        "options": {
+          "buildTarget": "build"
+        }
+      },
+      "copy-workspace-modules": {
+        "dependsOn": [
+          "build"
+        ],
+        "cache": true,
+        "outputs": [
+          "{workspaceRoot}/apps/playground/dist/workspace_modules"
+        ],
+        "executor": "@nx/js:copy-workspace-modules",
+        "options": {
+          "buildTarget": "build"
+        }
+      },
+      "prune": {
+        "dependsOn": [
+          "prune-lockfile",
+          "copy-workspace-modules"
+        ],
+        "executor": "nx:noop"
+      },
+      "serve": {
+        "continuous": true,
+        "executor": "@nx/js:node",
+        "defaultConfiguration": "development",
+        "dependsOn": [
+          "build"
+        ],
+        "options": {
+          "buildTarget": "@dcdavidev/playground:build",
+          "runBuildTargetDependencies": false
+        },
+        "configurations": {
+          "development": {
+            "buildTarget": "@dcdavidev/playground:build:development"
+          },
+          "production": {
+            "buildTarget": "@dcdavidev/playground:build:production"
+          }
+        }
+      },
+      "doc:g:toc": {
+        "executor": "nx:run-commands",
+        "options": {
+          "cwd": "{projectRoot}",
+          "command": "pnpm dlx markdown-toc -i README.md"
+        }
+      }
+    }
+  }
+}

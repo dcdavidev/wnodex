@@ -50,5 +50,27 @@
   },
   "publishConfig": {
     "access": "public"
+  },
+  "nx": {
+    "tags": [
+      "sdk",
+      "scope:wnodex",
+      "type:library"
+    ],
+    "targets": {
+      "build": {
+        "dependsOn": [
+          "^build",
+          "doc:g:toc"
+        ]
+      },
+      "doc:g:toc": {
+        "executor": "nx:run-commands",
+        "options": {
+          "cwd": "{projectRoot}",
+          "command": "pnpm dlx markdown-toc -i README.md"
+        }
+      }
+    }
   }
 }

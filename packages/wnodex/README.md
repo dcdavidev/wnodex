@@ -4,6 +4,8 @@ An extensible and robust Express.js server class designed for effortless customi
 
 ## Table of Contents
 
+<!-- toc -->
+
 - [Features](#features)
 - [Usage](#usage)
   - [Import and Instantiate](#import-and-instantiate)
@@ -13,10 +15,12 @@ An extensible and robust Express.js server class designed for effortless customi
   - [Start the Server](#start-the-server)
   - [Graceful Shutdown](#graceful-shutdown)
 - [API Reference](#api-reference)
-  - [class Wnodex](#class-wnodex)
+  - [class `Wnodex`](#class-wnodex)
     - [Constructor](#constructor)
     - [Methods](#methods)
 - [License](#license)
+
+<!-- tocstop -->
 
 ## Features
 
