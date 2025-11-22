@@ -2,7 +2,7 @@ import type { Application } from 'express';
 
 import hpp from 'hpp';
 
-import type { NodexConfigOutput } from '../schemas/nodex-config.js';
+import type { WnodexConfigOutput } from '../schemas/wnodex-config.js';
 
 /**
  * Configures the hpp middleware protection against HTTP Parameter Pollution.
@@ -18,7 +18,7 @@ import type { NodexConfigOutput } from '../schemas/nodex-config.js';
  * configureHpp(app, { hpp: true });
  * configureHpp(app, { hpp: ['param1', 'param2'] });
  */
-export function configureHpp(app: Application, config: NodexConfigOutput) {
+export function configureHpp(app: Application, config: WnodexConfigOutput) {
   const { hpp: options } = config;
 
   if (typeof options === 'boolean') {

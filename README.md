@@ -4,10 +4,10 @@
 
 An extensible and robust express.js server class designed for effortless customization and rapid deployment.
 
-# License
+## License
 
 This project is licensed under the MIT License.
 
 Copyright (c) 2025 Davide Di Criscito
 
-For the full details, see the [LICENSE] (./LICENSE) file.
+For the full details, see the [LICENSE](./LICENSE) file.

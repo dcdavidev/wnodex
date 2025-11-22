@@ -9,7 +9,7 @@ import { configureHpp } from '../middlewares/hpp.js';
 import { configurePassport } from '../middlewares/passport.js';
 import { configureRateLimit } from '../middlewares/rate-limit.js';
 import { configureSession } from '../middlewares/session.js';
-import type { NodexConfigOutput } from '../schemas/nodex-config.js';
+import type { WnodexConfigOutput } from '../schemas/wnodex-config.js';
 
 /**
  * Sets up Express middlewares for the application.
@@ -21,7 +21,7 @@ import type { NodexConfigOutput } from '../schemas/nodex-config.js';
  */
 export function setupMiddlewares(
   app: Application,
-  config: NodexConfigOutput
+  config: WnodexConfigOutput
 ): void {
   // Helmet
   configureHelmet(app, config);

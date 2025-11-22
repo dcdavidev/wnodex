@@ -1,8 +1,7 @@
 import type { NextFunction, Request, Response } from 'express';
 
-import { isDevelopment } from 'src/helpers/is-development.js';
-
 import type { HttpError } from '../errors/http-error.js';
+import { isDevelopment } from '../helpers/is-development.js';
 
 /**
  * Middleware for centralized error handling.

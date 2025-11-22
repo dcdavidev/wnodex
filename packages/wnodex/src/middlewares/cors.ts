@@ -1,7 +1,8 @@
 import type { Application } from 'express';
+
 import cors from 'cors';
 
-import type { NodexConfigOutput } from '../schemas/nodex-config.js';
+import type { WnodexConfigOutput } from '../schemas/wnodex-config.js';
 
 /**
  * Configures the CORS middleware for an Express application.
@@ -21,7 +22,7 @@ import type { NodexConfigOutput } from '../schemas/nodex-config.js';
  *    configureCors(this.app, this.config);
  * }
  */
-export function configureCors(app: Application, config: NodexConfigOutput) {
+export function configureCors(app: Application, config: WnodexConfigOutput) {
   const { cors: options } = config;
 
   if (typeof options === 'boolean') {

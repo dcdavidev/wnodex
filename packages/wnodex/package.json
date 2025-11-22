@@ -1,7 +1,18 @@
 {
   "name": "wnodex",
   "version": "0.0.1",
-  "private": true,
+  "private": false,
+  "homepage": "https://github.com/dcdavidev/wnodex#readme",
+  "bugs": {
+    "url": "https://github.com/dcdavidev/wnodex/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dcdavidev/wnodex.git",
+    "directory": "packages/wnodex"
+  },
+  "license": "MIT",
+  "author": "Davide Di Criscito",
   "exports": {
     "./package.json": "./package.json",
     ".": {
@@ -14,6 +25,30 @@
   "module": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "dependencies": {
-    "tslib": "^2.3.0"
+    "compression": "^1.8.1",
+    "cookie-parser": "^1.4.7",
+    "cors": "^2.8.5",
+    "express": "^5.1.0",
+    "express-rate-limit": "^8.2.1",
+    "express-session": "^1.18.2",
+    "helmet": "^8.1.0",
+    "hpp": "^0.2.3",
+    "passport": "^0.7.0",
+    "pino": "^10.1.0",
+    "pino-pretty": "^13.1.2",
+    "tslib": "^2.3.0",
+    "zod": "^4.1.12"
+  },
+  "devDependencies": {
+    "@types/compression": "^1.8.1",
+    "@types/cookie-parser": "^1.4.10",
+    "@types/cors": "^2.8.19",
+    "@types/express": "^5.0.5",
+    "@types/express-session": "^1.18.2",
+    "@types/hpp": "^0.2.7",
+    "@types/passport": "^1.0.17"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }

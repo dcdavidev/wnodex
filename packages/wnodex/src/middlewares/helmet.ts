@@ -1,7 +1,8 @@
 import type { Application } from 'express';
+
 import helmet from 'helmet';
 
-import type { NodexConfigOutput } from '../schemas/nodex-config.js';
+import type { WnodexConfigOutput } from '../schemas/wnodex-config.js';
 
 /**
  * Configures the Helmet middleware in an Express app.
@@ -15,7 +16,7 @@ import type { NodexConfigOutput } from '../schemas/nodex-config.js';
  *    configureHelmet(this.app, this.config);
  * }
  */
-export function configureHelmet(app: Application, config: NodexConfigOutput) {
+export function configureHelmet(app: Application, config: WnodexConfigOutput) {
   const { helmet: options } = config;
 
   if (typeof options === 'boolean') {

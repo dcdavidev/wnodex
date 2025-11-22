@@ -10,7 +10,7 @@ import { PortSchema } from './port.js';
 import { RateLimitOptionsSchema } from './rate-limit.js';
 import { SessionOptionsSchema } from './session.js';
 
-export const NodexConfigSchema = z.object({
+export const WnodexConfigSchema = z.object({
   port: PortSchema,
   helmet: HelmetOptionsSchema,
   cors: CorsOptionsSchema,
@@ -22,5 +22,5 @@ export const NodexConfigSchema = z.object({
   passport: PassportSchema,
 });
 
-export type NodexConfigInput = z.input<typeof NodexConfigSchema>;
-export type NodexConfigOutput = z.output<typeof NodexConfigSchema>;
+export type WnodexConfigInput = z.input<typeof WnodexConfigSchema>;
+export type WnodexConfigOutput = z.output<typeof WnodexConfigSchema>;

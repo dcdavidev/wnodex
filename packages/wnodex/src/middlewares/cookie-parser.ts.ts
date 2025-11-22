@@ -1,7 +1,8 @@
 import type { Application } from 'express';
+
 import cookieParser from 'cookie-parser';
 
-import type { NodexConfigOutput } from '../schemas/nodex-config.js';
+import type { WnodexConfigOutput } from '../schemas/wnodex-config.js';
 
 /**
  * Configures the cookie-parser middleware for the Express app based on the provided configuration.
@@ -21,7 +22,7 @@ import type { NodexConfigOutput } from '../schemas/nodex-config.js';
  */
 export function configureCookieParser(
   app: Application,
-  config: NodexConfigOutput
+  config: WnodexConfigOutput
 ) {
   const { cookieParser: options } = config;
 

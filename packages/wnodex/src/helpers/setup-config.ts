@@ -1,9 +1,9 @@
-import { ConfigError } from 'src/errors/config-error.js';
+import { ConfigError } from '../errors/config-error.js';
 import {
-  type NodexConfigInput,
-  type NodexConfigOutput,
-  NodexConfigSchema,
-} from 'src/schemas/nodex-config.js';
+  WnodexConfigInput,
+  WnodexConfigOutput,
+  WnodexConfigSchema,
+} from '../schemas';
 
 /**
  * Validates the provided config using NodexConfigSchema.
@@ -14,8 +14,8 @@ import {
  * @example
  * const config = setupConfig(rawConfig);
  */
-export function setupConfig(config: NodexConfigInput): NodexConfigOutput {
-  const result = NodexConfigSchema.safeParse(config);
+export function setupConfig(config: WnodexConfigInput): WnodexConfigOutput {
+  const result = WnodexConfigSchema.safeParse(config);
 
   if (!result.success) {
     throw new ConfigError('Invalid Nodex Configuration', result.error);

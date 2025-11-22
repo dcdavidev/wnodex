@@ -1,7 +1,8 @@
 import type { Application } from 'express';
+
 import rateLimit from 'express-rate-limit';
 
-import type { NodexConfigOutput } from '../schemas/nodex-config.js';
+import type { WnodexConfigOutput } from '../schemas/wnodex-config.js';
 
 /**
  * Configures the rate limiting middleware to protect the application
@@ -24,7 +25,7 @@ import type { NodexConfigOutput } from '../schemas/nodex-config.js';
  */
 export function configureRateLimit(
   app: Application,
-  config: NodexConfigOutput
+  config: WnodexConfigOutput
 ) {
   const { rateLimit: options } = config;
 

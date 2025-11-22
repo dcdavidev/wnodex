@@ -106,32 +106,17 @@
   "conventionalCommits.showNewVersionNotes": true,
   "conventionalCommits.storeScopesGlobally": false,
   "commitlint.log.enabled": true,
-  "npm-intellisense.importES6": true,
-  "npm-intellisense.importQuotes": "'",
-  "npm-intellisense.importDeclarationType": "const",
-  "npm-intellisense.scanDevDependencies": true,
-  "npm-intellisense.showBuildInLibs": true,
-  "npm-intellisense.recursivePackageJsonLookup": true,
-  "npm-intellisense.packageSubfoldersIntellisense": true,
-  "path-intellisense.extensionOnImport": true,
-  "path-intellisense.autoSlashAfterDirectory": true,
-  "path-intellisense.autoTriggerNextSuggestion": true,
-  "path-intellisense.showHiddenFiles": false,
-  "path-intellisense.absolutePathToWorkspace": true,
-  "path-intellisense.ignoreTsConfigBaseUrl": true,
   "typescript.suggest.paths": false,
   "javascript.suggest.paths": false,
   "exportall.config.barrelName": "index.ts",
   "exportall.config.exportFileExtension": "js",
   "exportall.config.includeFoldersToExport": false,
-  "exportall.config.namedExports": true,
+  "exportall.config.namedExports": false,
   "exportall.config.semis": true,
   "exportall.config.recursive": true,
   "emojisense.markupCompletionsEnabled": true,
   "emojisense.showOnColon": true,
   "emojisense.unicodeCompletionsEnabled": true,
-  "nxConsole.generateAiAgentRules": true,
-  "coderabbit.autoReviewMode": "prompt",
   "search.exclude": {
     "**/node_modules": true,
     "**/dist": true,
@@ -221,5 +206,6 @@
       ".config/lefthook.toml"
     ]
   },
-  "typescript.tsdk": "node_modules/typescript/lib"
+  "typescript.tsdk": "node_modules/typescript/lib",
+  "exportall.config.folderListener": ["/packages/wnodex/src"]
 }

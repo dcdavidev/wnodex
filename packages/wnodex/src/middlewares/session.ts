@@ -1,7 +1,8 @@
 import type { Application } from 'express';
+
 import session from 'express-session';
 
-import type { NodexConfigOutput } from '../schemas/nodex-config.js';
+import type { WnodexConfigOutput } from '../schemas/wnodex-config.js';
 
 /**
  * Configures the Express session middleware with the provided options.
@@ -15,7 +16,7 @@ import type { NodexConfigOutput } from '../schemas/nodex-config.js';
  * @example
  * configureSession(app, { session: { secret: 'your-secret', resave: false, saveUninitialized: false } });
  */
-export function configureSession(app: Application, config: NodexConfigOutput) {
+export function configureSession(app: Application, config: WnodexConfigOutput) {
   const { session: options } = config;
 
   if (!options) return;

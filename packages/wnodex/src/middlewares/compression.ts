@@ -2,7 +2,7 @@ import type { Application } from 'express';
 
 import compression from 'compression';
 
-import type { NodexConfigOutput } from '../schemas/nodex-config.js';
+import type { WnodexConfigOutput } from '../schemas/wnodex-config.js';
 
 /**
  * Configures compression middleware to compress HTTP responses,
@@ -20,7 +20,7 @@ import type { NodexConfigOutput } from '../schemas/nodex-config.js';
  */
 export function configureCompression(
   app: Application,
-  config: NodexConfigOutput
+  config: WnodexConfigOutput
 ) {
   const { compression: isCompressionEnabled } = config;
 

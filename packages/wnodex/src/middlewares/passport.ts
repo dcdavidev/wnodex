@@ -1,20 +1,20 @@
 import type { Application } from 'express';
 
-import type { NodexConfigInput } from 'src/schemas/nodex-config.js';
+import type { WnodexConfigInput } from '../schemas/wnodex-config.js';
 
 /**
  * Configures the passport instance.
  * @param app The express application instance.
- * @param config The Nodex raw config.
+ * @param config The Wnodex raw config.
  * @returns The passport instance.
  * @example
- * construction(config: NodexConfigInput) {
+ * construction(config: WnodexConfigInput) {
  *   this.app = express();
  *   this.config = configureConfig(config);
  *   this.passport = configurePassport(this.app, this.config)
  * }
  */
-export function configurePassport(app: Application, config: NodexConfigInput) {
+export function configurePassport(app: Application, config: WnodexConfigInput) {
   const { passport } = config;
 
   /**

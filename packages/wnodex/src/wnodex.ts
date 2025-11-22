@@ -8,30 +8,30 @@ import { setupConfig } from './helpers/setup-config.js';
 import { setupMiddlewares } from './helpers/setup-middlewares.js';
 import { logger } from './logger.js';
 import {
-  type NodexConfigInput,
-  type NodexConfigOutput,
-} from './schemas/nodex-config.js';
+  type WnodexConfigInput,
+  type WnodexConfigOutput,
+} from './schemas/wnodex-config.js';
 
 /**
- * Main application class for the Nodex server.
+ * Main application class for the Wnodex server.
  *
  * Handles Express app instantiation, configuration validation,
  * middleware setup, logging, error handling, server startup, and graceful shutdown.
  */
-export class Nodex {
+export class Wnodex {
   public app: Application;
   private server?: Server;
-  private readonly config: NodexConfigOutput;
+  private readonly config: WnodexConfigOutput;
   private readonly logger: Logger;
 
   /**
-   * Constructs a new Nodex server instance.
+   * Constructs a new Wnodex server instance.
    * Initializes the Express app, logger, validates and stores configuration, and applies middlewares.
-   * @param config Configuration input for Nodex, validated by NodexConfigSchema.
+   * @param config Configuration input for Wnodex, validated by WnodexConfigSchema.
    * @example
-   * const nodex = new Nodex({ port: 3000 });
+   * const wnodex = new Wnodex({ port: 3000 });
    */
-  constructor(config: NodexConfigInput) {
+  constructor(config: WnodexConfigInput) {
     this.app = express();
 
     // Logger
@@ -49,19 +49,19 @@ export class Nodex {
    * Provides access to the application's logger instance.
    * @returns Logger instance.
    * @example
-   * const log = nodex.getLogger();
+   * const log = wnodex.getLogger();
    */
   public getLogger(): Logger {
     return this.logger;
   }
 
   /**
-   * Returns the validated Nodex configuration.
-   * @returns NodexConfigOutput object.
+   * Returns the validated Wnodex configuration.
+   * @returns WnodexConfigOutput object.
    * @example
-   * const config = nodex.getConfig();
+   * const config = wnodex.getConfig();
    */
-  public getConfig(): NodexConfigOutput {
+  public getConfig(): WnodexConfigOutput {
     return this.config;
   }
 
@@ -69,20 +69,20 @@ export class Nodex {
    * Public getter for the express app instance.
    * @returns The express application instance.
    * @example
-   * const app = Nodex.getApp();
+   * const app = Wnodex.getApp();
    */
   public getApp(): Application {
     return this.app;
   }
 
-  // --- Nodex Start Helper ---
+  // --- Wnodex Start Helper ---
 
   /**
-   * Starts the Nodex server and listens on the specified port.
+   * Starts the Wnodex server and listens on the specified port.
    * Resolves when the server is ready.
    * @returns Promise that resolves once server is running.
    * @example
-   * await nodex.start();
+   * await wnodex.start();
    */
   public start(): Promise<void> {
     const logger = this.getLogger();
@@ -101,10 +101,10 @@ export class Nodex {
     });
   }
 
-  // --- Nodex Graceful Shutdown ---
+  // --- Wnodex Graceful Shutdown ---
 
   /**
-   * Gracefully shuts down the Nodex server.
+   * Gracefully shuts down the Wnodex server.
    * Stops accepting new connections, allows active connections to finish,
    * runs optional asynchronous cleanup chores, and closes the server.
    * @param chores An optional async callback function to perform cleanup tasks
@@ -113,7 +113,7 @@ export class Nodex {
    * @returns Promise that resolves when the server has stopped gracefully.
    *
    * @example
-   * await nodex.shutdown(async () => {
+   * await wnodex.shutdown(async () => {
    *   await db.close();
    *   await cache.clear();
    * });
