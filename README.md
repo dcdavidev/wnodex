@@ -4,6 +4,13 @@
 
 An extensible and robust express.js server class designed for effortless customization and rapid deployment.
 
+<!-- toc -->
+
+## Projects
+
+- [**wnodex**](./packages/wnodex/README.md)
+- [**playground**](./apps/playground/README.md)
+
 ## License
 
 This project is licensed under the MIT License.
