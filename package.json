@@ -20,7 +20,8 @@
     "release:major": "dropdx --major",
     "release:minor": "dropdx --minor",
     "release:patch": "dropdx --patch",
-    "spellcheck": "cspell --no-progress --no-summary ."
+    "spellcheck": "cspell --no-progress --no-summary .",
+    "test": "turbo run test"
   },
   "config": {
     "commitizen": {

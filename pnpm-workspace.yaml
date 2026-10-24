@@ -6,6 +6,7 @@ publicHoistPattern:
   - '*eslint*'
   - '*prettier*'
 allowBuilds:
+  esbuild: true
   lefthook: true
 minimumReleaseAgeExclude:
   - '@dcdavidev/dropdx@0.2.0'

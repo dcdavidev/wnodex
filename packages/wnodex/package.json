@@ -1,0 +1,122 @@
+{
+  "name": "wnodex",
+  "version": "0.4.1",
+  "private": false,
+  "description": "Web Node Express: an extensible, modular, and production-ready Express.js server framework with built-in security middlewares, structured Pino logging, health checks, and graceful shutdown.",
+  "keywords": [
+    "wnodex",
+    "express",
+    "framework",
+    "typescript",
+    "nodejs",
+    "server",
+    "http",
+    "web",
+    "security",
+    "middleware",
+    "healthcheck",
+    "pino"
+  ],
+  "homepage": "https://github.com/dcdavidev/wnodex#readme",
+  "bugs": {
+    "url": "https://github.com/dcdavidev/wnodex/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dcdavidev/wnodex.git",
+    "directory": "packages/wnodex"
+  },
+  "license": "MIT",
+  "author": "Davide Di Criscito <dcdavidev@gmail.com>",
+  "type": "module",
+  "exports": {
+    "./package.json": "./package.json",
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "default": "./dist/index.js"
+    },
+    "./config": {
+      "types": "./dist/config/index.d.ts",
+      "import": "./dist/config/index.js",
+      "default": "./dist/config/index.js"
+    },
+    "./constants": {
+      "types": "./dist/constants/index.d.ts",
+      "import": "./dist/constants/index.js",
+      "default": "./dist/constants/index.js"
+    },
+    "./errors": {
+      "types": "./dist/errors/index.d.ts",
+      "import": "./dist/errors/index.js",
+      "default": "./dist/errors/index.js"
+    },
+    "./health": {
+      "types": "./dist/health/index.d.ts",
+      "import": "./dist/health/index.js",
+      "default": "./dist/health/index.js"
+    },
+    "./logger": {
+      "types": "./dist/logger/index.d.ts",
+      "import": "./dist/logger/index.js",
+      "default": "./dist/logger/index.js"
+    },
+    "./middlewares": {
+      "types": "./dist/middlewares/index.d.ts",
+      "import": "./dist/middlewares/index.js",
+      "default": "./dist/middlewares/index.js"
+    },
+    "./server": {
+      "types": "./dist/server/index.d.ts",
+      "import": "./dist/server/index.js",
+      "default": "./dist/server/index.js"
+    }
+  },
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist",
+    "LICENSE",
+    "README.md"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "check-types": "tsc --noEmit",
+    "dev": "tsc --watch",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "compression": "^1.8.1",
+    "cookie-parser": "^1.4.7",
+    "cors": "^2.8.6",
+    "express": "^4.21.0",
+    "express-rate-limit": "^8.7.1",
+    "express-session": "^1.19.0",
+    "helmet": "^8.3.0",
+    "hpp": "^0.2.3",
+    "passport": "^0.7.0",
+    "pino": "^10.4.0",
+    "pino-pretty": "^13.2.0"
+  },
+  "devDependencies": {
+    "@dcdavidev/tsconfig": "^0.1.0",
+    "@types/compression": "^1.8.1",
+    "@types/cookie-parser": "^1.4.10",
+    "@types/cors": "^2.8.19",
+    "@types/express": "^4.17.21",
+    "@types/express-session": "^1.18.2",
+    "@types/hpp": "^0.2.7",
+    "@types/node": "^22.0.0",
+    "@types/passport": "^1.0.17",
+    "@types/supertest": "^6.0.2",
+    "supertest": "^7.0.0",
+    "typescript": "^5.9.3",
+    "vitest": "^3.0.0"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}
