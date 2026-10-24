@@ -1,0 +1,11 @@
+packages:
+  - 'packages/*'
+publicHoistPattern:
+  - '*commitlint*'
+  - '*conventional-changelog*'
+  - '*eslint*'
+  - '*prettier*'
+allowBuilds:
+  lefthook: true
+minimumReleaseAgeExclude:
+  - '@dcdavidev/dropdx@0.2.0'
