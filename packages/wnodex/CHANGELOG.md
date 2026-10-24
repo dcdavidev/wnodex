@@ -1,5 +1,9 @@
 # Changelog
 
+## v0.5.2 - 2026-10-24
+
+- Release version bump
+
 ## v0.5.1 - 2026-10-24
 
 - Release version bump
