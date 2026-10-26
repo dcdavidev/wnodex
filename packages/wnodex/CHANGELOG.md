@@ -1,5 +1,15 @@
 # Changelog
 
+## v0.5.3 - 2026-10-26
+
+### 📝 Documentation
+
+- add wnodex agent skills and repo guidance (a7f33de)
+
+### Other Changes
+
+- Merge pull request #1 from dcdavidev/docs-wnodex-agent-skills (8e515d3)
+
 ## v0.5.2 - 2026-10-24
 
 - Release version bump
