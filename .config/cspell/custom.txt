@@ -1,9 +1,13 @@
+bfree
 bumpp
 dcdavidev
 dropdx
 eneedauth
 eotp
+healthz
 releaserc
 spellbookx
+statfs
+unregistration
 versionrc
 wnodex
