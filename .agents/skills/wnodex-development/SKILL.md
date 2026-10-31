@@ -189,7 +189,11 @@ Always run `pnpm run release:dry` first. The release bumps `packages/wnodex/pack
 ### Related Skills
 
 - **`wnodex`** — using the package: API, configuration, logging, errors, lifecycle.
+- **`wnodex-config`** — `wnodex/config` and `wnodex/constants` surface and conventions.
+- **`wnodex-errors`** — `wnodex/errors` hierarchy and error middlewares.
+- **`wnodex-logger`** — `wnodex/logger` Pino factory and redaction.
 - **`wnodex-middlewares`** — middleware options, defaults, and ordering.
 - **`wnodex-health-checks`** — health endpoints and plugin authoring.
+- **`wnodex-server`** — `wnodex/server` lifecycle and graceful shutdown.
 - **`spellbookx-setup`**, **`spellbookx-eslint`**, **`spellbookx-prettier`**, **`spellbookx-cspell`**, **`spellbookx-commitlint`** — toolchain detail.
 - **`dropdx`** — release engine detail.

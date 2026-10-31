@@ -17,8 +17,12 @@ Read the matching skill before working in an area:
 | Skill                                          | Use for                                                                          |
 | :--------------------------------------------- | :------------------------------------------------------------------------------- |
 | `.agents/skills/wnodex/SKILL.md`               | Using the package: dual functional/class API, config, logging, errors, lifecycle |
+| `.agents/skills/wnodex-config/SKILL.md`        | `wnodex/config` & `wnodex/constants`, `loadConfig`, pure env parsers, defaults   |
+| `.agents/skills/wnodex-errors/SKILL.md`        | `wnodex/errors`, `BaseError`, `HttpError`, `ConfigError`, `ValidationError`, 404 |
+| `.agents/skills/wnodex-logger/SKILL.md`        | `wnodex/logger`, `createLogger`, Pino formatting, redaction, child loggers       |
 | `.agents/skills/wnodex-middlewares/SKILL.md`   | Middleware ecosystem, defaults, mount order, recipes                             |
 | `.agents/skills/wnodex-health-checks/SKILL.md` | `/health`, `/health/live`, `/health/ready`, plugin authoring, K8s probes         |
+| `.agents/skills/wnodex-server/SKILL.md`        | `wnodex/server`, `startServer`, graceful shutdown, `cleanupHooks`, OS signals    |
 | `.agents/skills/wnodex-development/SKILL.md`   | Contributing here: layout, conventions, gates, release flow                      |
 
 Each skill has a `references/` directory with deep detail. Load those only when needed.

@@ -11,8 +11,12 @@ description: This skill should be used when the user asks to "build an Express s
 
 Use this skill to build an HTTP server with `wnodex`, configure it, and wire up logging, errors, and lifecycle. Consult the companion skills for focused areas:
 
+- **`wnodex-config`** — `wnodex/config` and `wnodex/constants`, `loadConfig`, pure env parsers, and defaults.
+- **`wnodex-errors`** — `wnodex/errors`, `BaseError`, `HttpError`, `ConfigError`, `ValidationError`, and error middlewares.
+- **`wnodex-logger`** — `wnodex/logger`, `createLogger`, redaction, and child loggers.
 - **`wnodex-middlewares`** — the middleware ecosystem, defaults, and ordering.
 - **`wnodex-health-checks`** — health endpoints and custom plugins.
+- **`wnodex-server`** — `wnodex/server`, server startup, graceful shutdown, and cleanup hooks.
 - **`wnodex-development`** — contributing to the wnodex repository itself.
 
 ## When to Use
@@ -159,7 +163,7 @@ const logger = createLogger({ level: 'debug', isDevelopment: true });
 logger.info({ orderId }, 'Order accepted');
 ```
 
-The logger redacts `req.headers.authorization`, `req.headers.cookie`, `password`, and `token` by default. Add paths through the standard Pino `redact` option; the framework merges your overrides after its defaults.
+The logger redacts `req.headers.authorization`, `req.headers.cookie`, `password`, and `token` (`DEFAULT_REDACTED_PATHS`) by default. When overriding `redact`, spread `...DEFAULT_REDACTED_PATHS` into `redact.paths` to preserve the built-in redactions alongside your custom paths.
 
 `createApp` stores the active logger on the app as `app.get('logger')`, and `startServer` reads it back, so passing `logger` to `createApp` is enough to have it used for lifecycle logs.
 
@@ -247,6 +251,10 @@ After wiring a wnodex server:
 
 ### Related Skills
 
+- **`wnodex-config`** — environment resolution, pure parsers, and framework constants.
+- **`wnodex-errors`** — error hierarchy, `HttpError` factories, and error handling middlewares.
+- **`wnodex-logger`** — Pino logger setup, redaction, and request-scoped child loggers.
 - **`wnodex-middlewares`** — middleware options, defaults, ordering, and recipes.
 - **`wnodex-health-checks`** — health endpoints, probes, and plugin authoring.
+- **`wnodex-server`** — server startup, graceful shutdown, and cleanup hooks.
 - **`wnodex-development`** — repository architecture, conventions, and release workflow.

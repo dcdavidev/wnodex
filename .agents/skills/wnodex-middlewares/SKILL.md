@@ -281,5 +281,9 @@ After changing the middleware stack:
 ### Related Skills
 
 - **`wnodex`** — core API, configuration, lifecycle, and error handling.
+- **`wnodex-config`** — `ServerConfig` and `DEFAULT_*` constants consumed by middlewares.
+- **`wnodex-errors`** — `HttpError`, `ConfigError`, `createErrorHandler`, and `createNotFoundHandler`.
+- **`wnodex-logger`** — structured Pino logging and request-scoped child loggers.
 - **`wnodex-health-checks`** — health endpoints and plugins.
+- **`wnodex-server`** — server startup and graceful shutdown.
 - **`wnodex-development`** — repository architecture, conventions, and release workflow.

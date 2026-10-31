@@ -210,5 +210,7 @@ Point liveness at `/health/live` so a dependency outage does not trigger restart
 ### Related Skills
 
 - **`wnodex`** — core API, configuration, lifecycle, and error handling.
+- **`wnodex-config`** — `DEFAULT_HEALTH_PATH`, `CRITICAL_HEAP_USAGE_RATIO`, and `ServerConfig`.
 - **`wnodex-middlewares`** — middleware options, defaults, and ordering.
+- **`wnodex-server`** — graceful shutdown and Kubernetes probe coordination.
 - **`wnodex-development`** — repository architecture, conventions, and release workflow.
